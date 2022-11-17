@@ -26,19 +26,20 @@ class VotingController extends Controller
             if (auth()->user()->kandidat_id != null) {
                 return redirect()->route('dashboard');
             }
-            $vote_date = Config::where(['name' => 'vote_date'])->first()['value'] ?? '-';
+            $vote_date_start = Config::where(['name' => 'vote_date_start'])->first()['value'] ?? '-';
+            $vote_date_end = Config::where(['name' => 'vote_date_end'])->first()['value'] ?? '-';
             $vote_open = Config::where(['name' => 'vote_open'])->first()['value'] ?? '-';
             $vote_closed = Config::where(['name' => 'vote_closed'])->first()['value'] ?? '-';
+            $open = strtotime($vote_date_start.' '.$vote_open);
+            $close = strtotime($vote_date_end.' '.$vote_closed);
 
-            if (date('Y-m-d') == $vote_date) {
-                if (strtotime(date('H:i')) > strtotime($vote_open) && strtotime(date('H:i')) < strtotime($vote_closed)) {
-                    $message = auth()->user()->name . ' Telah Memilih';
-                    event(new VotingEvent($message));
-                    auth()->user()->update([
-                        'kandidat_id' => $id
-                    ]);
-                }   
-            }
+            if (strtotime(date('Y-m-d H:i')) >= strtotime($open) && strtotime(date('Y-m-d H:i')) <= strtotime($close)) {
+                $message = auth()->user()->name . ' Telah Memilih';
+                event(new VotingEvent($message));
+                auth()->user()->update([
+                    'kandidat_id' => $id
+                ]);
+            } 
             return redirect()->route('dashboard');
         } catch (\Throwable $th) {
             return view('error.index', ['message' => $th->getMessage()]);

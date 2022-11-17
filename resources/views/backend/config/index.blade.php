@@ -42,6 +42,26 @@
                         <div class="mb-3">
                             <label>{{ $item['label'] }}</label>
                             <input name="field[{{ $item['id'] }}]" id="{{ $item['id'] }}" class="form-control @error($item['id']) is-invalid @enderror" 
+                            type="date" autocomplete="false" value="{{ $item['value'] }}">
+                        </div>
+                    </div>
+                </div>
+                @elseif($item['type'] == 6)
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label>{{ $item['label'] }}</label>
+                            <input name="field[{{ $item['id'] }}]" id="{{ $item['id'] }}" class="form-control @error($item['id']) is-invalid @enderror" 
+                            type="time" autocomplete="false" value="{{ $item['value'] }}">
+                        </div>
+                    </div>
+                </div>
+                @elseif($item['type'] == 7)
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label>{{ $item['label'] }}</label>
+                            <input name="field[{{ $item['id'] }}]" id="{{ $item['id'] }}" class="form-control @error($item['id']) is-invalid @enderror" 
                             type="time" autocomplete="false" value="{{ $item['value'] }}">
                         </div>
                     </div>

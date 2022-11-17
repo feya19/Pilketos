@@ -38,24 +38,31 @@ class ConfigSeeder extends Seeder
         ]);
 
         Config::create([
-            'name'  => 'vote_date',
-            'label' => 'Tanggal Pemilihan',
+            'name'  => 'vote_date_start',
+            'label' => 'Tanggal Pemilihan Mulai',
             'value' => '',
             'type'  => 4
+        ]);
+
+        Config::create([
+            'name'  => 'vote_date_end',
+            'label' => 'Tanggal Pemilihan Berakhir',
+            'value' => '',
+            'type'  => 5
         ]);
 
         Config::create([
             'name'  => 'vote_open',
             'label' => 'Jam Mulai',
             'value' => '',
-            'type'  => 5
+            'type'  => 6
         ]);
 
         Config::create([
             'name'  => 'vote_closed',
             'label' => 'Jam Selesai',
             'value' => '',
-            'type'  => 5
+            'type'  => 7
         ]);
 
     }

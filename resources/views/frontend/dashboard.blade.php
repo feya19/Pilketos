@@ -11,18 +11,20 @@
                 </div>
                 <div class="card-body">
                     @if (auth()->user()->kandidat_id == null)
-                        @if (date('Y-m-d') == $vote_date)
-                            @if (strtotime(date('H:i')) > strtotime($vote_open) && strtotime(date('H:i')) < strtotime($vote_closed))
-                                 <p>Silahkan Klik Tombol Dibawah Ini Untuk Melaksanakan Pemilihan!.</p>
-                                 <a href="{{ route('voting') }}" class="btn btn-primary">Voting Sekarang</a>
-                            @else
-                                <p>Pilkosis Telah Ditutup Pada Jam {{ $vote_closed }}.</p>
-                                <p>Silahkan Buka Halaman Hasil Untuk Mengetahui Siapa Pasangan Yang Jadi Pemenangnya.</p>
-                            @endif
-                        @elseif(strtotime(date('Y-m-d')) < strtotime($vote_date))
-                            <p>Pilkosis Akan Dilaksanakan Pada Tanggal {{ $vote_date }}</p>
-                        @elseif(strtotime(date('Y-m-d')) > strtotime($vote_date))
-                            <p>Pilkosis Telah Dilaksanakan Pada Tanggal {{ $vote_date }}</p>
+                        @php
+                            $open = strtotime($vote_date_start.' '.$vote_open);
+                            $close = strtotime($vote_date_end.' '.$vote_closed);
+                        @endphp 
+                        @if (strtotime(date('Y-m-d H:i')) >= strtotime($open) && strtotime(date('Y-m-d H:i')) <= strtotime($close))
+                                <p>Silahkan Klik Tombol Dibawah Ini Untuk Melaksanakan Pemilihan!.</p>
+                                <a href="{{ route('voting') }}" class="btn btn-primary">Voting Sekarang</a>
+                        @elseif(strtotime(date('Y-m-d H:i')) < strtotime($open))
+                            <p>Pilkosis Akan Dilaksanakan Pada Tanggal {{ $vote_date_start }} Jam {{ $vote_open }}.</p>
+                        @elseif(strtotime(date('Y-m-d H:i')) > strtotime($close))
+                            <p>Pilkosis Telah Dilaksanakan Pada Tanggal {{ $vote_date_end }} Jam {{ $vote_closed }}.</p>
+                        @else
+                            <p>Pilkosis Telah Ditutup Pada Tanggal {{ $vote_date_end }} Jam {{ $vote_closed }}.</p>
+                            <p>Silahkan Buka Halaman Hasil Untuk Mengetahui Siapa Pasangan Yang Jadi Pemenangnya.</p>
                         @endif
                     @else
                         <p>Terimakasih, Kamu Telah Mengirimkan Suaramu!</p>

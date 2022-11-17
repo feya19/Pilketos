@@ -4,14 +4,14 @@
         <div class="row mb-5">
             <div class="col-md-6 pt-md-5 mb-3 text-center text-md-start">
                 <h1 class="text-uppercase">Selamat Datang Di PILKOSIS</h1>
-                <h4>Mari Kita Sukseskan Pemilihan Ketua Osis <br> SMK Harapan Nusantara</h4>
-                <a href="#" class="btn btn-outline-primary">Mulai Memilih</a>
+                <h4>Mari Kita Sukseskan Pemilihan Ketua Osis <br> SMKN 1 Boyolangu</h4>
+                <a href="#row-paslon" class="btn btn-outline-primary">Lihat Paslon</a>
             </div>
             <div class="col-md-6">
                 <img src="{{ asset('image/clip-voting.gif') }}" alt="" srcset="" class="w-100">
             </div>
         </div>
-        <div class="row pt-5">
+        <div class="row pt-5" id="row-paslon">
             <div class="col-md-12 text-center">
                 <h2>Daftar Paslon</h2>
             </div>

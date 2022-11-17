@@ -29,7 +29,8 @@ class AppServiceProvider extends ServiceProvider
             view()->share([
                 'app_name' => Config::where(['name' => 'app_name'])->first()['value'] ?? '-',
                 'app_logo' => Config::where(['name' => 'app_logo'])->first()['file_path'] ?? '-',
-                'vote_date' => Config::where(['name' => 'vote_date'])->first()['value'] ?? '-',
+                'vote_date_start' => Config::where(['name' => 'vote_date_start'])->first()['value'] ?? '-',
+                'vote_date_end' => Config::where(['name' => 'vote_date_end'])->first()['value'] ?? '-',
                 'vote_open' => Config::where(['name' => 'vote_open'])->first()['value'] ?? '-',
                 'vote_closed' => Config::where(['name' => 'vote_closed'])->first()['value'] ?? '-',
             ]);
