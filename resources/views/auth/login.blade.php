@@ -4,9 +4,9 @@
     <div class="col-lg-6 col-12">
         <div id="auth-left">
             <div class="text-center mb-4">
-                <a href="index.html"><img src="{{ $app_logo }}" alt="Logo" width="100"></a>
+                <a href="{{ url('/') }}"><img src="{{ $app_logo }}" alt="Logo" width="100"></a>
             </div>
-            <h1 class="auth-title">Masuk</h1>
+            <h1 class="auth-title text-center">Masuk</h1>
              
             <form method="POST" action="{{ route('login_user') }}">
                 @csrf

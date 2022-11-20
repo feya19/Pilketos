@@ -1,23 +1,23 @@
 @extends('layouts.frontend.app')
 @section('content')
     <div class="container">
-        <div class="row mb-5">
+        <div class="row" style="padding-bottom: 2.5rem;padding-top: 2.5rem;">
             <div class="col-md-6 pt-md-5 mb-3 text-center text-md-start">
-                <h1 class="text-uppercase">Selamat Datang Di PILKOSIS</h1>
-                <h4>Mari Kita Sukseskan Pemilihan Ketua Osis <br> SMKN 1 Boyolangu</h4>
+                <h1 class="text-uppercase mb-3">Selamat Datang Di PILKETOS</h1>
+                <h4 class="mb-3">Mari Kita Sukseskan Pemilihan Ketua Osis <br> SMKN 1 Boyolangu</h4>
                 <a href="#row-paslon" class="btn btn-outline-primary">Lihat Paslon</a>
             </div>
             <div class="col-md-6">
                 <img src="{{ asset('image/clip-voting.gif') }}" alt="" srcset="" class="w-100">
             </div>
         </div>
-        <div class="row pt-5" id="row-paslon">
-            <div class="col-md-12 text-center">
+        <div class="row mt-5 pt-4" id="row-paslon">
+            <div class="col-md-12 text-center mb-5">
                 <h2>Daftar Paslon</h2>
             </div>
             <div class="col-md-12">
                 <div class="row">
-                    @foreach ($data['kandidat'] as $kandidat)
+                    @foreach ($data['kandidat'] as $kandidat)    
                         <div class="col-md-3">
                             <div class="card">
                                 <div class="card-content">

@@ -5,8 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ $app_name }}</title>
-
     <link rel="stylesheet" href="{{ asset('mazer') }}/assets/css/main/app.css" />
+    <link rel="stylesheet" href="{{ asset('mazer') }}/assets/css/main/app-dark.css"/>
+    <link rel="stylesheet" href="{{ asset('css') }}/app.css"/>
+    <link rel="stylesheet" href="{{ asset('mazer') }}/assets/css/pages/fontawesome.css">
     <link
       rel="shortcut icon"
       href="{{ asset('mazer') }}/assets/images/logo/favicon.svg"
@@ -19,11 +21,6 @@
     />
 
     <link rel="stylesheet" href="{{ asset('mazer') }}/assets/css/shared/iconly.css" />
-    <style>
-      .header-top{
-        background-color: #F2F7FF !important;
-      }
-    </style>
   </head>
 
   <body>
@@ -33,7 +30,7 @@
           <div class="header-top">
             <div class="container">
               <div class="logo">
-                <a href="index.html"
+                <a href="{{ url('/') }}"
                   ><img src="{{ $app_logo }}" alt="Logo" style="height: 40px"
                 /></a>
               </div>
@@ -53,7 +50,11 @@
                     <div class="text">
                       <h6 class="user-dropdown-name">{{ auth()->user()->name }}</h6>
                       <p class="user-dropdown-status text-sm text-muted text-capitalize">
-                       Member
+                        @if(auth()->user()->role_name == 'admin')
+                          Administrator
+                        @else
+                          User
+                        @endif
                       </p>
                     </div>
                   </a>
@@ -61,10 +62,14 @@
                     class="dropdown-menu dropdown-menu-end shadow-lg"
                     aria-labelledby="topbarUserDropdown"
                   >
-                    <li><a class="dropdown-item" href="{{ route('dashboard') }}">My Dashboard</a></li>
-                    <li><hr class="dropdown-divider" /></li>
-                    
+                  
                     @auth
+                      @if(auth()->user()->role_name == 'admin')
+                        <li><a class="dropdown-item" href="{{ route('backend.dashboard') }}">My Dashboard</a></li>
+                      @else
+                        <li><a class="dropdown-item" href="{{ route('dashboard') }}">My Dashboard</a></li>
+                      @endif
+                    <li><hr class="dropdown-divider" /></li>
                     <li>
                       <form method="POST" action="{{ route('logout') }}">
                         @csrf
@@ -82,7 +87,6 @@
               </div>
             </div>
           </div>
-    
         </header>
 
         <div class="content-wrapper container">

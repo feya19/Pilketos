@@ -33,7 +33,7 @@ class VotingController extends Controller
             $open = strtotime($vote_date_start.' '.$vote_open);
             $close = strtotime($vote_date_end.' '.$vote_closed);
 
-            if (strtotime(date('Y-m-d H:i')) >= strtotime($open) && strtotime(date('Y-m-d H:i')) <= strtotime($close)) {
+            if (strtotime(date('Y-m-d H:i')) >= $open && strtotime(date('Y-m-d H:i')) <= $close) {
                 $message = auth()->user()->name . ' Telah Memilih';
                 event(new VotingEvent($message));
                 auth()->user()->update([

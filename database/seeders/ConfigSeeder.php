@@ -27,7 +27,7 @@ class ConfigSeeder extends Seeder
         Config::create([
             'name'  => 'app_name',
             'label' => 'Application Name',
-            'value' => 'Pilkosis',
+            'value' => 'Pilketos',
             'type'  => 0
         ]);
 

@@ -74,7 +74,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>Hasil Pilkosis</h4>
+                    <h4>Hasil Pilketos</h4>
                 </div>
                 <div class="card-body">
                     <div id="chartHasil"></div>
@@ -110,7 +110,7 @@
                 },
                 plotOptions: {},
                 series: [{
-                    name: "Penghasilan",
+                    name: "Vote",
                     data: jumlah,
                 }, ],
                 colors: "#435ebe",

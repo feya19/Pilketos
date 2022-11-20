@@ -36,7 +36,7 @@ Route::get('/', [WelcomeController::class,'index']);
 Route::post('/login-user', [UserAuthController::class,'login'])->name('login_user');
 
 Route::middleware(['auth','role:admin'])->group(function(){
-
+    
     Route::prefix('backend')->name('backend.')->group(function(){
 
         Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
