@@ -52,12 +52,15 @@ class AuthenticatedSessionController extends Controller
      */
     public function destroy(Request $request)
     {
+        if($request->filled('pemilih')){
+            $route = Auth::user()->role_name == 'admin' ? '/login-admin' : 'login';
+        }
         Auth::guard('web')->logout();
 
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect($route ?? '/');
     }
 }

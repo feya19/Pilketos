@@ -69,8 +69,8 @@ class KandidatController extends Controller
     public function delete($id)
     {
         try {
-            $this->jurusan->delete($id,true,['photo']);
-            return redirect()->route('backend.jurusan.index')->with('success',__('message.delete'));
+            $this->kandidat->delete($id,true,'photo');
+            return redirect()->route('backend.kandidat.index')->with('success',__('message.delete'));
         }catch (\Throwable $th) {
             return view('error.index',['message' => $th->getMessage()]);
         }

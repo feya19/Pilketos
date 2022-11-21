@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7a13a40009f7c6e98bc679fcbd9eee09",
+    "content-hash": "4a292e6d5db0e278003abe50ce6b8c38",
     "packages": [
         {
             "name": "brick/math",
@@ -3663,6 +3663,68 @@
                 }
             ],
             "time": "2022-10-23T02:49:28+00:00"
+        },
+        {
+            "name": "stechstudio/laravel-zipstream",
+            "version": "4.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stechstudio/laravel-zipstream.git",
+                "reference": "eec27aa9dc1144a96fd0208b0bf8fcaa0455ab7b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stechstudio/laravel-zipstream/zipball/eec27aa9dc1144a96fd0208b0bf8fcaa0455ab7b",
+                "reference": "eec27aa9dc1144a96fd0208b0bf8fcaa0455ab7b",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.0|^7.0",
+                "illuminate/support": "^5.6|^6.0|^7.0|^8.0|^9.0",
+                "maennchen/zipstream-php": "^v2.0",
+                "php": "^7.1|^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^5.0|^6.0|^7.0",
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "STS\\ZipStream\\ZipStreamServiceProvider"
+                    ],
+                    "aliases": {
+                        "Zip": "STS\\ZipStream\\ZipStreamFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "STS\\ZipStream\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Joseph Szobody",
+                    "email": "joseph@stechstudio.com"
+                }
+            ],
+            "description": "Build",
+            "homepage": "https://github.com/stechstudio/laravel-zipstream",
+            "keywords": [
+                "laravel-zipstream",
+                "stechstudio"
+            ],
+            "support": {
+                "issues": "https://github.com/stechstudio/laravel-zipstream/issues",
+                "source": "https://github.com/stechstudio/laravel-zipstream/tree/4.8"
+            },
+            "time": "2022-04-04T13:05:01+00:00"
         },
         {
             "name": "symfony/console",

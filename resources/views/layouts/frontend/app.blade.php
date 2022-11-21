@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ $app_name }}</title>
     <link rel="stylesheet" href="{{ asset('mazer') }}/assets/css/main/app.css" />
-    <link rel="stylesheet" href="{{ asset('mazer') }}/assets/css/main/app-dark.css"/>
     <link rel="stylesheet" href="{{ asset('css') }}/app.css"/>
     <link rel="stylesheet" href="{{ asset('mazer') }}/assets/css/pages/fontawesome.css">
     <link
@@ -98,7 +97,7 @@
         <footer>
           <div class="container">
             <div class="footer clearfix mb-0 text-muted">
-              <div class="float-start">
+              <div class="float-end">
                 <p>2022 &copy; {{ $app_name }}</p>
               </div>
             </div>

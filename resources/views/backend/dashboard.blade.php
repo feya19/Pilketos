@@ -143,27 +143,4 @@
             getData();
         });
     </script>
-    <script src="https://js.pusher.com/7.2/pusher.min.js"></script>
-    <script>
-        // Enable pusher logging - don't include this in production
-        Pusher.logToConsole = true;
-
-        var pusher = new Pusher('af07d1c595ed832e1eaf', {
-            cluster: 'ap1'
-        });
-
-        var channel = pusher.subscribe('voting-channel');
-        channel.bind('voting-event', function(data) {
-            getData();
-            var message = JSON.stringify(data)
-            Toastify({
-                text: data.message,
-                duration: 3000,
-                close: true,
-                gravity: "top",
-                position: "right",
-                backgroundColor: "#4fbe87",
-            }).showToast()
-        });
-    </script>
 @endpush

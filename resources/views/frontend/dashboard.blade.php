@@ -28,6 +28,12 @@
                         @endif
                     @else
                         <p>Terimakasih, Kamu Telah Mengirimkan Suaramu!</p>
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <input type="hidden" name="pemilih" value="1">
+                            <button class="btn btn-danger" onclick="event.preventDefault();
+                            this.closest('form').submit();">Logout</button>
+                        </form>
                     @endif
                 </div>
             </div>

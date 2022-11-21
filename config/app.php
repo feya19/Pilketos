@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Facade;
+use STS\ZipStream\ZipStream;
 
 return [
 
@@ -198,6 +199,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
         Yajra\DataTables\DataTablesServiceProvider::class,
+        STS\ZipStream\ZipStreamServiceProvider::class
     ],
 
     /*
@@ -212,7 +214,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-        // 'ExampleClass' => App\Example\ExampleClass::class,
+        'Zip' => STS\ZipStream\ZipStreamFacade::class,
     ])->toArray(),
 
 ];

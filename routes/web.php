@@ -72,7 +72,8 @@ Route::middleware(['auth','role:admin'])->group(function(){
             Route::get('/delete/{id}',[PemilihController::class,'delete'])->name('delete');
             Route::get('/edit/{id}',[PemilihController::class,'edit'])->name('edit');
             Route::post('/update/{id}',[PemilihController::class,'update'])->name('update');
-
+            Route::get('/export',[PemilihController::class,'export'])->name('export');
+            Route::get('/export-kelas',[PemilihController::class,'exportKelas'])->name('export-kelas');
         });
 
         Route::prefix('/kandidat')->name('kandidat.')->group(function(){

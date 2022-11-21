@@ -20,7 +20,7 @@
                             <a href="{{ route('backend.kandidat.edit',$kandidat) }}" class="dropdown-item">
                                 <i class="bi bi-pen"></i> {{ __('button.edit') }}
                             </a>
-                            <a href={{ route('backend.kandidat.delete',$kandidat) }}"" class="dropdown-item">
+                            <a href="{{ route('backend.kandidat.delete',$kandidat) }}" class="dropdown-item">
                                 <i class="bi bi-trash"></i> {{ __('button.delete') }}
                             </a>
                         </x-button.dropdown>

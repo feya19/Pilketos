@@ -16,7 +16,7 @@ class PemilihService {
 
     public function store($data)
     {
-        $data['token'] =  strtoupper(Str::random(6));
+        $data['token'] = strtolower(Str::random(6));
         $pemilih = $this->pemilih->store($data);
         $pemilih->assignRole('user');
         return $pemilih;
