@@ -23,7 +23,7 @@
                             $misi = json_encode(explode('| ', $kandidat->misi));
                             $name = explode('-', $kandidat->name);
                         @endphp    
-                        <div class="col-md-4 px-1">
+                        <div class="col-md-4 px-3">
                             <div class="card">
                                 <div class="card-content">
                                     <img class="img-fluid w-100" src="{{ $kandidat->photo_path }}" alt="Card image cap">
@@ -38,7 +38,7 @@
                                     data-bs-target="#default"
                                     data-visi="{{ $visi }}"
                                     data-misi="{{ $misi }}"
-                                    data-title="{{ $name[0] }}"
+                                    data-title="{{ $name[0] ?? $kandidat->name }}"
                                     >Visi & Misi</button>
                                 </div>
                             </div>
