@@ -39,12 +39,14 @@
                                     </div>
                                 </div>
                                 <div class="card-footer d-flex justify-content-between">
-                                    <button class="btn btn-primary btn-block"  data-bs-toggle="modal"
+                                    <button class="btn btn-secondary btn-block"  data-bs-toggle="modal"
                                     data-bs-target="#default"
                                     data-visi="{{ $visi }}"
                                     data-misi="{{ $misi }}"
                                     data-title="{{ $name[0] ?? $kandidat->name }}"
                                     >Visi & Misi</button>
+                                    <span class="span">&nbsp;&nbsp;</span>
+                                    <button type="button" onclick="konfirmasi(`{{ route('voting.store',$kandidat->id) }}`)" class="btn btn-primary btn-block" >Pilih</button>
                                 </div>
                             </div>
                         </div>
@@ -89,13 +91,14 @@
         function konfirmasi(url) {
             Swal.fire({
                 title: "Apakah Anda Yakin?",
-                text: "Memilih Pasangan Ini",
+                text: "Memilih Calon Ini",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
                 confirmButtonText: "Ya, Pilih !",
                 cancelButtonText: "Tidak.",
+                reverseButtons: true
             }).then((result) => {
                 if (result.isConfirmed) {
                     window.location.href = url;
