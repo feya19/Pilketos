@@ -42,6 +42,7 @@ class ImportPemilihCommand extends Command
             $worksheet = $spreadsheet->getActiveSheet()->toArray(null, true, true, true);
             $success = 0;
             $failure = '';
+            $tampung = [];
             for ($i = 2; $i <= count($worksheet); $i++) {
                 $array_pemilih = [
                     'no' => trim($worksheet[$i]['A']),
@@ -71,10 +72,10 @@ class ImportPemilihCommand extends Command
                         'jurusan_id' => $jurusan->id
                     ]);
                     $user = User::updateOrCreate([
-                        'email' => $array_pemilih['email'],
-                        'name' => $array_pemilih['name'],
+                        'email' => $array_pemilih['email']
                     ], [
                         'email' => $array_pemilih['email'],
+                        'name' => $array_pemilih['name'],
                         'kelas_id' => $kelas->id,
                         'jurusan_id' => $jurusan->id
                     ]);
@@ -87,7 +88,7 @@ class ImportPemilihCommand extends Command
                     DB::commit();
                 }catch(Exception $e){
                     DB::rollback();
-                    dd($e);
+                    dump($e);
                     $failure .= (count($worksheet) == 2 || $i == count($worksheet) ? $array_pemilih['no'] :  $array_pemilih['no'].', ');
                     continue;
                 }

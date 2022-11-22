@@ -148,6 +148,9 @@
         }
         $(document).ready(function() {
             getData();
+            setInterval(() => {
+                getData();
+            }, 60000);
         });
     </script>
 @endpush

@@ -30,7 +30,7 @@
                                     <a class="card-nomor h3">{{ $kandidat->nomor_urut }}</a>
                                     <a class="card-kelas h3">{{ $name[1] ?? $kandidat->name }}</a>
                                     <div class="card-body pb-0">
-                                        <h4 class="card-title text-center pt-2">{{ $name[0] ?? '' }}</h4>
+                                        <h6 class="text-center pt-2">{{ $name[0] ?? '' }}</h6>
                                     </div>
                                 </div>
                                 <div class="card-footer d-flex justify-content-between">
@@ -58,9 +58,6 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="myModalLabel1"></h5>
-                    <button type="button" class="close rounded-pill" data-bs-dismiss="modal" aria-label="Close" disabled>
-                        <i data-feather="x"></i>
-                    </button>
                 </div>
                 <div class="modal-body">
                     <h6>Visi :</h6>
