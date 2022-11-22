@@ -63,7 +63,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="myModalLabel1"></h5>
-                    <button type="button" class="close rounded-pill" data-bs-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close rounded-pill" data-bs-dismiss="modal" aria-label="Close" disabled>
                         <i data-feather="x"></i>
                     </button>
                 </div>
@@ -75,8 +75,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                        <i class="bx bx-x d-block d-sm-none"></i>
-                        <span class="d-none d-sm-block">Close</span>
+                        <span>Close</span>
                     </button>
                 </div>
             </div>
@@ -105,18 +104,21 @@
         }
     </script>
     <script>
-        $('#default').on('show.bs.modal', function(e) {
-        var visi = $(e.relatedTarget).data('visi');
-        var misi = $(e.relatedTarget).data('misi');
-        var title = $(e.relatedTarget).data('title');
-        $('#myModalLabel1').text(`Visi Misi ${title}`);
-        $('#visi,#misi').html('');
-        $.each(visi, (i, v) => {
-            $('#visi').append(`<li>${v}</li>`);
-        });
-        $.each(misi, (i, v) => {
-            $('#misi').append(`<li>${v}</li>`);
+        $(() => {
+            $('button[data-bs-toggle="modal"]').prop('disabled', false);
+            $('#default').on('show.bs.modal', function(e) {
+                var visi = $(e.relatedTarget).data('visi');
+                var misi = $(e.relatedTarget).data('misi');
+                var title = $(e.relatedTarget).data('title');
+                $('#myModalLabel1').text(`Visi Misi ${title}`);
+                $('#visi,#misi').html('');
+                $.each(visi, (i, v) => {
+                    $('#visi').append(`<li>${v}</li>`);
+                });
+                $.each(misi, (i, v) => {
+                    $('#misi').append(`<li>${v}</li>`);
+                })
+            });
         })
-        });
     </script>
 </html>
