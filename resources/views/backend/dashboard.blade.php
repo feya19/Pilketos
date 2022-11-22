@@ -74,7 +74,14 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>Hasil Pilketos</h4>
+                    <div class="row">
+                        <div class="col-10">
+                            <h4>Hasil Pilketos</h4>
+                        </div>
+                        <div class="col-2 d-flex justify-content-end">
+                            <button class="btn btn-light icon" onclick="getData()"><i class="fas fa-sync-alt"></i></button>
+                        </div>
+                    </div>
                 </div>
                 <div class="card-body">
                     <div id="chartHasil"></div>
