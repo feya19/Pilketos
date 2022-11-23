@@ -150,7 +150,7 @@
             getData();
             setInterval(() => {
                 getData();
-            }, 60000);
+            }, 10000);
         });
     </script>
 @endpush
