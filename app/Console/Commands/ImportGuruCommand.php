@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Validator;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use Illuminate\Support\Str;
 
-class ImportPemilihCommand extends Command
+class ImportGuruCommand extends Command
 {
     /**
      * The name and signature of the console command.

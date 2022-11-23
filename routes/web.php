@@ -34,6 +34,9 @@ Route::get('send-notif/{name}', function ($name) {
 
 Route::get('/', [WelcomeController::class,'index']);
 Route::post('/login-user', [UserAuthController::class,'login'])->name('login_user');
+Route::fallback(function(){
+    return redirect('/login');
+});
 
 Route::middleware(['auth','role:admin'])->group(function(){
     
