@@ -7,6 +7,7 @@
     <title>{{ $app_name }}</title>
     <link rel="stylesheet" href="{{ asset('mazer') }}/assets/css/main/app.css">
     <link rel="stylesheet" href="{{ asset('mazer') }}/assets/css/pages/auth.css">
+    <link rel="stylesheet" href="{{ asset('mazer') }}/assets/css/pages/fontawesome.css">
     <link rel="shortcut icon" href="{{ asset('mazer') }}/assets/images/logo/favicon.svg" type="image/x-icon">
     <link rel="shortcut icon" href="{{ asset('mazer') }}/assets/images/logo/favicon.png" type="image/png">
 </head>

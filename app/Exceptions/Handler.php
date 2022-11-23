@@ -46,5 +46,19 @@ class Handler extends ExceptionHandler
         $this->reportable(function (Throwable $e) {
             //
         });
+
+        $this->renderable(function (\Exception $exception, $request) {
+            if ($exception->getPrevious() instanceof \Illuminate\Session\TokenMismatchException) {
+                if($request->ajax() || $request->expectsJson()){
+                    return response()->json([
+                        'success' => false,
+                        'message' => 'CSRF token mismatch.',
+                        'url' => '/login'
+                    ], 419);
+                }else{
+                    return redirect()->route('login')->with('error', 'Session Expired.');
+                }
+            };
+        });
     }
 }
