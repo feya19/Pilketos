@@ -97,34 +97,103 @@
           $('#chartHasil').empty()
             var label = [];
             var jumlah = [];
+            var persentase = [];
             for (var i in data) {
                 label.push(data[i].name)
                 jumlah.push(data[i].jumlah)
+                persentase.push(data[i].persentase)
             }
             var optionsChartHasil = {
-                annotations: {
-                    position: "back",
+                series: [{
+                    name: 'Vote',
+                    type: 'column',
+                    color: '#435ebe',
+                    data: jumlah
+                }, {
+                    name: 'Persentase',
+                    type: 'line',
+                    color: '#198754',
+                    data: persentase
+                }],
+                chart: {
+                    height: 350,
+                    type: 'line',
+                    stacked: false
                 },
                 dataLabels: {
-                    enabled: false,
+                    enabled: false
                 },
-                chart: {
-                    type: "bar",
-                    height: 300,
+                stroke: {
+                    width: [1, 4]
                 },
-                fill: {
-                    opacity: 1,
+                title: {
+                    text: '',
+                    align: 'left',
+                    offsetX: 110
                 },
-                plotOptions: {},
-                series: [{
-                    name: "Vote",
-                    data: jumlah,
-                }, ],
-                colors: "#435ebe",
                 xaxis: {
                     categories: label,
                 },
-            }
+                yaxis: [
+                {
+                    seriesName: 'Vote',
+                    opposite: false,
+                    axisTicks: {
+                        show: true,
+                    },
+                    axisBorder: {
+                        show: true,
+                        color: '#435ebe'
+                    },
+                    labels: {
+                        style: {
+                            colors: '#435ebe',
+                        }
+                    },
+                    title: {
+                        text: "Vote",
+                        style: {
+                            color: '#435ebe',
+                        }
+                    },
+                },
+                {
+                    seriesName: 'Persentase',
+                    opposite: true,
+                    axisTicks: {
+                        show: true,
+                    },
+                    axisBorder: {
+                        show: true,
+                        color: '#198754'
+                    },
+                    max: 100.00,
+                    labels: {
+                        style: {
+                            colors: '#198754',
+                        },
+                    },
+                    title: {
+                        text: "Persentase",
+                        style: {
+                            color: '#198754',
+                        }
+                    }
+                },
+                ],
+                tooltip: {
+                    fixed: {
+                        enabled: true,
+                        position: 'topLeft', // topRight, topLeft, bottomRight, bottomLeft
+                        offsetY: 30,
+                        offsetX: 60
+                    },
+                },
+                legend: {
+                    horizontalAlign: 'left',
+                    offsetX: 40
+                }
+            };
             var chartHasil = new ApexCharts(
                 document.querySelector("#chartHasil"),
                 optionsChartHasil

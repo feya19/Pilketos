@@ -39,6 +39,13 @@ class DashboardController extends Controller
         ->join('kandidats','kandidats.id','=','users.kandidat_id','RIGHT')
         ->groupBy('kandidats.id')
         ->get();
+        $total = collect($data['hasil'])->sum('jumlah');
+        if($data['hasil']){
+            foreach($data['hasil'] as $key => $hasil){
+                $num = $hasil->jumlah / $total * 100;
+                $data['hasil'][$key]->persentase = (float)number_format($num, 2);
+            } 
+        }
         return json_encode($data);
     }
 }
