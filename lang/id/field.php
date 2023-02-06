@@ -4,16 +4,16 @@ return [
     // Global
     'action' => 'Aksi',
     // Jurusan
-    'jurusan' => 'Jurusan',
-    'jurusan_name' => 'Nama Jurusan',
+    'jurusan' => 'Kecamatan',
+    'jurusan_name' => 'Nama Kecamatan',
 
     // Kelas
-    'kelas' => 'Kelas',
-    'kelas_name' => 'Nama Kelas',
+    'kelas' => 'Kelurahan',
+    'kelas_name' => 'Nama Kelurahan',
 
     'voter' => 'Pemilih',
     'voter_name' => 'Nama Pemilih',
-    'voter_nis' => 'NIS',
+    'voter_nis' => 'NIK',
     'voter_token' => 'Token',
 
     // Kandidat

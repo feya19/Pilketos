@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'major' => 'Jurusan',
-    'class' => 'Kelas',
+    'major' => 'Kecamatan',
+    'class' => 'Kelurahan',
     'candidate' => 'Kandidat',
     'voter' => "Pemilih",
 ];

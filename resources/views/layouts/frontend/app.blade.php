@@ -28,9 +28,9 @@
         <header class="mb-5">
           <div class="header-top">
             <div class="container">
-              <div class="logo">
+              <div class="logo d-inline">
                 <a href="{{ url('/') }}"
-                  ><img src="{{ $app_logo }}" alt="Logo" style="height: 40px"
+                  ><img src="{{ $app_logo }}" alt="Logo" style="height: 50px"
                 /></a>
               </div>
               <div class="header-top-right">

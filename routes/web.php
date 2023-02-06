@@ -45,7 +45,7 @@ Route::middleware(['auth','role:admin'])->group(function(){
         Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
         Route::get('/dashboard/ajax',[DashboardController::class,'ajax'])->name('dashboard.ajax');
 
-        Route::prefix('/jurusan')->name('jurusan.')->group(function(){
+        Route::prefix('/kecamatan')->name('jurusan.')->group(function(){
 
             Route::get('/',[JurusanController::class,'index'])->name('index');
             Route::get('/create',[JurusanController::class,'create'])->name('create');
@@ -56,7 +56,7 @@ Route::middleware(['auth','role:admin'])->group(function(){
 
         });
 
-        Route::prefix('/kelas')->name('kelas.')->group(function(){
+        Route::prefix('/kelurahan')->name('kelas.')->group(function(){
 
             Route::get('/',[KelasController::class,'index'])->name('index');
             Route::get('/create',[KelasController::class,'create'])->name('create');
@@ -76,7 +76,7 @@ Route::middleware(['auth','role:admin'])->group(function(){
             Route::get('/edit/{id}',[PemilihController::class,'edit'])->name('edit');
             Route::post('/update/{id}',[PemilihController::class,'update'])->name('update');
             Route::get('/export',[PemilihController::class,'export'])->name('export');
-            Route::get('/export-kelas',[PemilihController::class,'exportKelas'])->name('export-kelas');
+            Route::get('/export-kelurahan',[PemilihController::class,'exportKelas'])->name('export-kelas');
         });
 
         Route::prefix('/kandidat')->name('kandidat.')->group(function(){

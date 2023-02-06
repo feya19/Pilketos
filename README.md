@@ -2,25 +2,6 @@
 <img src="https://user-images.githubusercontent.com/61069138/200459674-928d1bfc-a291-4c06-a343-0b964c04c64b.png" >
 
 
-<p align="center">Dibuat Menggunakan Framework Laravel Versi 9 Dan Realtime Notification Menggunakan Pusher.</p>
-<div align="center">
-
-[![All Contributors](https://img.shields.io/github/contributors/fikrisuheri/-laravel-9-evoting-pemilihan-ketua-osis)](https://github.com/fikrisuheri/-laravel-9-evoting-pemilihan-ketua-osis/graphs/contributors)
-![GitHub last commit](https://img.shields.io/github/last-commit/fikrisuheri/-laravel-9-evoting-pemilihan-ketua-osis.svg)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/fikrisuheri/-laravel-9-evoting-pemilihan-ketua-osis)
-</div>
-
-## DIMOHON UNTUK TIDAK DIPERJUALBELIKAN !
-
-## Fitur apa saja yang tersedia di Aplikasi Aplikasi Voting Pemilihan Ketua Osis?
-
-- Realtime Notification Pusher
-- Crud Kelas & Jurusan
-- Atur Tanggal Pemilihan Dan Jam Dibuka&Tutup
-- Yajradatatable Service
-- Role Menggunakan Spatie
-
-
 ## Akun Default
 
 - email: admin@gmail.com
@@ -30,13 +11,14 @@
 
 ## Install
 
-1. **Clone Repository**
+1. **Repository**
 
 ```bash
-git clone https://github.com/fikrisuheri/-laravel-9-evoting-pemilihan-ketua-osis.git
-cd laravel-9-evoting-pemilihan-ketua-osis
+extract file
+masuk folder dan masuk terminal
 composer install
-cp .env.example .env
+buat file bernama .env dalam folder
+copy isi file dari .env.example ke .env
 ```
 
 2. **Buka `.env` lalu ubah baris berikut sesuai dengan databasemu yang ingin dipakai**
@@ -48,22 +30,10 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-3. **Buka `.env` lalu ubah baris berikut sesuai dengan api pusher kamu kamu**
+3. **Instalasi Aplikasi**
 
 ```bash
-PUSHER_APP_ID=xxxxx
-PUSHER_APP_KEY=xxxxx
-PUSHER_APP_SECRET=xxxxx
-PUSHER_HOST=
-PUSHER_PORT=443
-PUSHER_SCHEME=https
-PUSHER_APP_CLUSTER=ap1
-```
-
-
-4. **Instalasi Aplikasi**
-
-```bash
+terminal
 php artisan key:generate
 php artisan migrate --seed
 ```
@@ -73,24 +43,6 @@ php artisan migrate --seed
 ```bash
 php artisan serve
 ```
-
-
-## Contributing
-
-Contributions, issues and feature requests di persilahkan.
-
-
-## Author
-
-- Facebook : <a href="https://web.facebook.com/ahmad.ari.9847/"> FIKRI SUHERI</a>
-- INSTAGRAM : <a href="https://www.instagram.com/fikrisuheri__"> FIKRI SUHERI</a>
-
-## Donation
-
-You can support Me On [Saweria](https://saweria.co/fikrisuheri) Or [Traktee](https://trakteer.id/fikri-suheri)
-
-## Request App
-Saya Juga Open Jasa Pembuatan Website Ya, Silahkan Bisa Kontak Saya Via Facebook Saya Di Atas
 
 ## Preview
 

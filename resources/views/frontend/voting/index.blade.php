@@ -26,16 +26,14 @@
                         @php
                             $visi = json_encode(explode('| ', $kandidat->visi));
                             $misi = json_encode(explode('| ', $kandidat->misi));
-                            $name = explode('-', $kandidat->name);
                         @endphp    
                         <div class="col-md-4 px-3">
                             <div class="card">
                                 <div class="card-content">
                                     <img class="img-fluid w-100" src="{{ $kandidat->photo_path }}" alt="Card image cap">
                                     <a class="card-nomor h3">{{ $kandidat->nomor_urut }}</a>
-                                    <a class="card-kelas h3">{{ $name[1] ?? $kandidat->name }}</a>
                                     <div class="card-body pb-0">
-                                        <h6 class="text-center pt-2">{{ $name[0] ?? '' }}</h6>
+                                        <h6 class="text-center pt-2">{{ $kandidat->name }}</h6>
                                     </div>
                                 </div>
                                 <div class="card-footer d-flex justify-content-between">
