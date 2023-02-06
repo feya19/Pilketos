@@ -76,7 +76,7 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-10">
-                            <h4>Hasil Pilketos</h4>
+                            <h4>Hasil Pemilu</h4>
                         </div>
                         <div class="col-2 d-flex justify-content-end">
                             <button class="btn btn-light icon" onclick="getData()"><i class="fas fa-sync-alt"></i></button>
@@ -118,7 +118,7 @@
                 chart: {
                     height: 350,
                     type: 'line',
-                    stacked: false
+                    stacked: false,
                 },
                 dataLabels: {
                     enabled: false

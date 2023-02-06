@@ -42,7 +42,7 @@ class DashboardController extends Controller
         $total = collect($data['hasil'])->sum('jumlah');
         if($data['hasil']){
             foreach($data['hasil'] as $key => $hasil){
-                $num = $hasil->jumlah / $total * 100;
+                $num = $hasil->jumlah ? $hasil->jumlah > 0 / $total * 100 : 0;
                 $data['hasil'][$key]->persentase = (float)number_format($num, 2);
             } 
         }
